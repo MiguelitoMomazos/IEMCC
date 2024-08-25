@@ -1,0 +1,134 @@
+/* Estilos generales del body */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Sidebar */
+#sidebar-wrapper {
+    background-color: #3a4dfc; /* Fondo negro */
+    color: #fff; /* Texto blanco */
+    min-width: 250px; /* Ancho fijo del sidebar */
+    height: 100vh; /* Asegura que el sidebar ocupe toda la altura */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed; /* Fija el sidebar en la izquierda */
+    top: 0;
+    left: 0;
+    padding: 10px 0; /* Espaciado interno superior e inferior */
+}
+
+/* Contenido principal */
+#content-wrapper {
+    margin-left: 250px; /* Deja espacio para el sidebar */
+    padding: 20px;
+    background-color: #f8f9fa; /* Fondo claro para el contenido */
+}
+
+/* Estilos del título del sidebar */
+.sidebar-heading {
+    display: flex;
+    justify-content: center; /* Centra el logo horizontalmente */
+    align-items: center; /* Centra el logo verticalmente */
+    padding: 10px; /* Espaciado interno */
+}
+
+.logo-img {
+    width: 120px;
+    height: 120px;
+}
+
+/* Estilos de los botones del sidebar */
+.list-group-item {
+    background-color: #3a4dfc; /* Fondo negro */
+    color: #fff; /* Texto blanco */
+    border: none;
+    padding: 15px 20px; /* Espaciado interno de los botones */
+    margin: 10px 20px; /* Espaciado externo entre los botones */
+    text-align: center; /* Centra el texto */
+    cursor: pointer;
+    position: relative; /* Necesario para que la flecha esté posicionada correctamente */
+    width: calc(100% - 40px); /* Ajusta el ancho según el margen */
+}
+
+/* Solo aplica la flecha a los botones "Académico" y "Asistencias" */
+.list-group-item:nth-child(1)::after,
+.list-group-item:nth-child(3)::after {
+    content: '\25BC'; /* Flecha hacia abajo */
+    font-size: 0.8rem;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s;
+}
+
+/* Rota la flecha cuando el submenú está desplegado */
+#submenu1.show + .list-group-item:nth-child(1)::after,
+#submenu2.show + .list-group-item:nth-child(3)::after {
+    transform: translateY(-50%) rotate(180deg); /* Flecha hacia arriba */
+}
+
+.list-group-item:hover {
+    background-color: #f72d2d; /* Blanco al hacer hover */
+    color: #000000;
+}
+
+/* Estilos de los submenús desplegables */
+.submenu {
+    padding-left: 0; /* Ajusta el padding para que los subbotones ocupen todo el ancho */
+    display: none; /* Ocultar por defecto */
+    overflow: hidden; /* Ocultar contenido excedente */
+    transition: height 0.3s ease; /* Transición para la altura */
+}
+
+.submenu a {
+    padding: 10px;
+    background-color: #061fff; /* Un tono más claro de negro */
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    width: 100%; /* Asegura que el subbotón ocupe todo el ancho del sidebar */
+    text-align: center; /* Centra el texto del subbotón */
+}
+
+.submenu a:hover {
+    background-color: #444;
+}
+
+/* Botón de login */
+#login-button {
+    background-color: #3a4bed; /* Negro para el botón de login */
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+    border: none;
+    width: calc(100% - 40px); /* Ajuste de ancho según el margen */
+    margin: 10px 20px; /* Margen superior e inferior */
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+#login-button:hover {
+    background-color: #fcfcfc;
+    color: #000000;
+}
+
+
+/*CARDS*/
+
+.card {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #ffffff; /* Fondo por defecto */
+}
+
+/* Cambios de color de fondo al pasar el mouse */
+.card:hover {
+    transform: scale(1.05); /* Animación de escala */
+}
+

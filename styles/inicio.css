@@ -1,0 +1,63 @@
+body {
+    background: #400101; 
+    margin: 0;
+}
+
+.contacto {
+    color: white;
+    background-color: #400101; 
+    padding: 10px 0; 
+    text-align: center; 
+    width: 100%;
+}   
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff; 
+    position: fixed; 
+    top: 50px; 
+    width: 100%; 
+    z-index: 1030; 
+    transition: top 0.3s ease;
+}
+
+.logo-container {
+    margin-right: 20px; 
+}
+
+@media (max-width: 991px) {
+    .navbar-container {
+        flex-direction: column; 
+    }
+    .logo-container {
+        margin-right: 0; 
+        margin-bottom: 10px; 
+    }
+}
+
+.carousel-item img {
+    height: 730px; 
+    object-fit: cover;
+}
+
+
+.ctnd-b {
+    width: 100%; 
+    background: white;
+}
+
+.row {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+}
+
+.bienvenida h1 {
+    margin-top: 25px; /* Ajusta el valor según el espacio que desees */
+    color: #d9534f; /* Color rojo no intenso */
+    text-align: center; /* Centrando el texto */
+}
+
+
