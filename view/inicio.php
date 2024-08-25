@@ -39,7 +39,7 @@
                             <a class="nav-link me-3" href="#">Cursos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link me-3" href="http://localhost/IEMCC//view/gestionA.php">Gestion Academica</a>
+                            <a class="nav-link me-3" href="http://localhost/IEMCC//view/registro.php">Gestion Academica</a>
                         </li>
                     </ul>
                 </div>
