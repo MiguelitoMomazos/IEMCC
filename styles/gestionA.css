@@ -7,8 +7,8 @@ body {
 
 /* Sidebar */
 #sidebar-wrapper {
-    background-color: #3a4dfc; /* Fondo negro */
-    color: #fff; /* Texto blanco */
+    background-color: #b30000; /* Fondo negro */
+    color: #f7c94a; /* Texto blanco */
     min-width: 250px; /* Ancho fijo del sidebar */
     height: 100vh; /* Asegura que el sidebar ocupe toda la altura */
     display: flex;
@@ -24,7 +24,7 @@ body {
 #content-wrapper {
     margin-left: 250px; /* Deja espacio para el sidebar */
     padding: 20px;
-    background-color: #f8f9fa; /* Fondo claro para el contenido */
+    background-color: #b30000; /* Fondo claro para el contenido */
 }
 
 /* Estilos del título del sidebar */
@@ -39,11 +39,14 @@ body {
     width: 120px;
     height: 120px;
 }
+.color{
+    color: #f7c94a; /* Texto blanco */
 
+}
 /* Estilos de los botones del sidebar */
 .list-group-item {
-    background-color: #3a4dfc; /* Fondo negro */
-    color: #fff; /* Texto blanco */
+    background-color: #b30000; /* Fondo negro */
+    color: #f7c94a; /* Texto blanco */
     border: none;
     padding: 15px 20px; /* Espaciado interno de los botones */
     margin: 10px 20px; /* Espaciado externo entre los botones */
@@ -72,8 +75,8 @@ body {
 }
 
 .list-group-item:hover {
-    background-color: #f72d2d; /* Blanco al hacer hover */
-    color: #000000;
+    background-color: #b30000; /* Blanco al hacer hover */
+    color: #ffffff;
 }
 
 /* Estilos de los submenús desplegables */
@@ -86,7 +89,7 @@ body {
 
 .submenu a {
     padding: 10px;
-    background-color: #061fff; /* Un tono más claro de negro */
+    background-color: #b30000; /* Un tono más claro de negro */
     display: block;
     color: #fff;
     text-decoration: none;
@@ -100,8 +103,8 @@ body {
 
 /* Botón de login */
 #login-button {
-    background-color: #3a4bed; /* Negro para el botón de login */
-    color: #fff;
+    background-color: #b30000; /* Negro para el botón de login */
+    color: #f7c94a;
     padding: 15px 0;
     text-align: center;
     border: none;
@@ -112,23 +115,133 @@ body {
 }
 
 #login-button:hover {
-    background-color: #fcfcfc;
+    background-color: #b82d2d;
     color: #000000;
 }
 
 
-/*CARDS*/
 
-.card {
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    border: 1px solid #ddd;
-    border-radius: 0.25rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    background-color: #ffffff; /* Fondo por defecto */
+
+/* Eliminar el estilo de card */
+/* Contenedor principal para centrar horizontalmente */
+/* Estilo para el encabezado de bienvenida */
+#welcome-heading {
+    text-align: center;
+    color: #b30000;
+    margin-bottom: 30px; /* Espacio debajo del encabezado */
+    font-size: 50px;
+    font-weight: bold;
+    animation: fadeIn 3s ease-in-out; /* Agregar animación */
+    font-family: "Libre Baskerville", serif;
 }
 
-/* Cambios de color de fondo al pasar el mouse */
-.card:hover {
-    transform: scale(1.05); /* Animación de escala */
+#welcome-message{
+    text-align: center;
+    color: black;
 }
+
+/* Animación de texto */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px); /* Texto sube */
+    }
+    50% {
+        opacity: 0.5;
+        transform: translateY(10px); /* Texto baja un poco */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Texto en posición original */
+    }
+}
+
+/* Contenedor para los botones */
+.button-container {
+    text-align: center; /* Centra los botones horizontalmente */
+    margin-bottom: 30px; /* Espacio debajo de los botones */
+    
+}
+
+/* Botones en la página principal */
+.btn-register, .btn-view {
+    width: auto; /* Ajusta el ancho de los botones */
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    margin: 0 10px; /* Espacio entre los botones */
+    color: black;
+}
+
+.btn-register {
+    background-color: #b30000; /* Rojo oscuro */
+    color: #000000; /* Texto blanco */
+}
+
+.btn-register:hover {
+    background-color: #a00000; /* Rojo más oscuro para hover */
+}
+
+.btn-view {
+    background-color: #f7c94a; /* Amarillo brillante */
+    color: #000; /* Texto negro */
+}
+
+.btn-view:hover {
+    background-color: #e6b840; /* Amarillo más oscuro para hover */
+}
+
+/* Formulario */
+#attendance-form {
+    width: 100%;
+    max-width: 600px; /* Ancho máximo del formulario */
+    margin: 0 auto; /* Centra el formulario horizontalmente */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#attendance-form h2 {
+    text-align: center;
+    color: #b30000;
+    margin-bottom: 20px; /* Espacio debajo del encabezado del formulario */
+    font-size: 24px;
+    font-weight: bold;
+    animation: fadeIn 3s ease-in-out; /* Agregar animación */
+}
+
+#attendance-form input[type="text"], 
+#attendance-form input[type="date"], 
+#attendance-form select, 
+#attendance-form input[type="file"] {
+    width: calc(100% - 22px); /* Ajusta el ancho considerando padding y border */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#attendance-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #b30000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#attendance-form button:hover {
+    background-color: #990000;
+}
+
+#attendance-form input::placeholder {
+    color: #aaa;
+}
+
 

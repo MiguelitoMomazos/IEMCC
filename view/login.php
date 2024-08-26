@@ -1,28 +1,33 @@
-<!-- codigo php  ^-^ -->
-
 <?php
-include 'conexion.php';
+include '../util/conexion.php';
+session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nombre = $_POST['nombre'];
     $email = $_POST['email'];
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-    $rol = $_POST['rol'];
+    $password = $_POST['password'];
 
-    $stmt = $conn->prepare("INSERT INTO usuarios (nombre, email, password, rol) VALUES (:nombre, :email, :password, :rol)");
-    $stmt->bindParam(':nombre', $nombre);
+    $stmt = $conn->prepare("SELECT * FROM usuarios WHERE email = :email");
     $stmt->bindParam(':email', $email);
-    $stmt->bindParam(':password', $password);
-    $stmt->bindParam(':rol', $rol);
+    $stmt->execute();
 
-    if ($stmt->execute()) {
-        echo "Registro exitoso. <a href='login.php'>Iniciar sesión</a>";
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($user && password_verify($password, $user['password'])) {
+        $_SESSION['user_id'] = $user['id'];
+        $_SESSION['rol'] = $user['rol'];
+
+        if ($user['rol'] == 'auxiliar') {
+            header("Location: http://localhost/IEMCC//view/alumnos.php");
+        } elseif ($user['rol'] == 'docente') {
+            header("Location: vista_docente.php");
+        } else {
+            header("Location: http://localhost/IEMCC//view/alumnos.php");
+        }
     } else {
-        echo "Error al registrar.";
+        echo "Credenciales incorrectas.";
     }
 }
 ?>
-
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -57,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             font-family: 'Georgia', serif;
         }
 
-        input, select {
+        input {
             width: calc(100% - 20px);
             padding: 10px;
             margin: 10px 0;
@@ -67,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             font-size: 16px;
         }
 
-        input:focus, select:focus {
+        input:focus {
             border-color: #b30000;
             outline: none;
         }
@@ -89,24 +94,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             background-color: #d11a2a;
             transform: scale(1.05);
         }
-
-        option {
-            color: #b30000;
-        }
     </style>
 </head>
+
 </head>
-<form method="post">    
-<h2>Registro de Usuario</h2>
-    <input type="text" name="nombre" placeholder="Nombre" required>
+<form method="post">
+<h2>Iniciar Sesion</h2>
     <input type="email" name="email" placeholder="Correo electrónico" required>
     <input type="password" name="password" placeholder="Contraseña" required>
-    <select name="rol"required>
-        <option value="auxiliar">Auxiliar</option>
-        <option value="docente">Docente</option>
-        <option value="director">Director</option>
-    </select>
-    <button type="submit">Registrar</button>
+    <button type="submit">Iniciar sesión</button>
 </form>
-<!-- Estilo del registro ^-^ -->
- 

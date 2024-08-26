@@ -1,5 +1,5 @@
 body {
-    background: #400101; 
+    background: #ffffff; 
     margin: 0;
 }
 
@@ -59,5 +59,221 @@ body {
     color: #d9534f; /* Color rojo no intenso */
     text-align: center; /* Centrando el texto */
 }
+/* Asegúrate de que las cards sean del mismo tamaño y estén centradas */
+/* Espaciado entre las cards */
+.row {
+    margin: 0; /* Elimina márgenes en la fila para que el espaciado se controle mediante padding */
+}
+
+.col-md-4 {
+    padding: 0 50px; /* Añade espacio a los lados de las columnas */
+    display: flex;
+    justify-content: center; /* Centra la card dentro de la columna */
+    margin-bottom: 100px /* Añade espacio a los lados de las columnas */
+}
+
+/* Asegúrate de que la clase .card esté bien definida */
+/* Ajustes para las cards */
+/* Ajustar el ancho máximo de las cards */
+/* Estilo inicial de las cards */
+.card {
+    border: 1px solid #ddd; /* Añadir un borde inicial ligero */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 450px; /* Ancho máximo de las cards */
+    margin: auto; /* Centra las cards dentro de la columna */
+    opacity: 0; /* Inicialmente ocultas las cards */
+    transform: translateY(20px); /* Inicialmente las desplazas hacia abajo */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.6s ease, border 0.3s ease; /* Añadir transición */
+    animation: fadeInUp 0.6s forwards; /* Añadir animación */
+}
+
+/* Definir la animación de desvanecimiento y desplazamiento */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 
+.card {
+    border: none; /* Sin borde inicial */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 450px; /* Ancho máximo de las cards */
+    margin: auto; /* Centra las cards dentro de la columna */
+    opacity: 0; /* Inicialmente ocultas las cards */
+    transform: translateY(20px); /* Inicialmente las desplazas hacia abajo */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.6s ease, box-shadow 0.3s ease; /* Añadir transición */
+    animation: fadeInUp 0.6s forwards; /* Añadir animación */
+    overflow: hidden; /* Ocultar cualquier desbordamiento para que el efecto de zoom no corte el contenido */
+}
+
+/* Definir la animación de desvanecimiento y desplazamiento */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Efecto de elevación y borde neón al pasar el ratón */
+/* Estilo inicial de las cards */
+.card {
+    border: none; /* Sin borde inicial */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 450px; /* Ancho máximo de las cards */
+    margin: auto; /* Centra las cards dentro de la columna */
+    opacity: 0; /* Inicialmente ocultas las cards */
+    transform: translateY(20px); /* Inicialmente las desplazas hacia abajo */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.6s ease; /* Añadir transición */
+    animation: fadeInUp 0.6s forwards; /* Añadir animación */
+    overflow: hidden; /* Ocultar cualquier desbordamiento para que el efecto de zoom no corte el contenido */
+}
+
+/* Definir la animación de desvanecimiento y desplazamiento */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Efecto de elevación y borde neón al pasar el ratón */
+/* Estilo inicial de las cards */
+.card {
+    border: none; /* Sin borde inicial */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 450px; /* Ancho máximo de las cards */
+    margin: auto; /* Centra las cards dentro de la columna */
+    opacity: 0; /* Inicialmente ocultas las cards */
+    transform: translateY(20px); /* Inicialmente las desplazas hacia abajo */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.6s ease; /* Añadir transición */
+    animation: fadeInUp 0.6s forwards; /* Añadir animación */
+    overflow: hidden; /* Ocultar cualquier desbordamiento para que el efecto de zoom no corte el contenido */
+}
+
+/* Definir la animación de desvanecimiento y desplazamiento */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Efecto de elevación y borde neón al pasar el ratón */
+/* Estilo inicial de las cards */
+.card {
+    border: none; /* Sin borde inicial */
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.1);
+    max-width: 450px; /* Ancho máximo de las cards */
+    margin: auto; /* Centra las cards dentro de la columna */
+    opacity: 0; /* Inicialmente ocultas las cards */
+    transform: translateY(20px); /* Inicialmente las desplazas hacia abajo */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease; /* Añadir transición */
+    animation: fadeInUp 0.6s forwards; /* Añadir animación */
+    overflow: hidden; /* Ocultar cualquier desbordamiento para que el efecto de zoom no corte el contenido */
+    position: relative; /* Para que el pseudo-elemento se posicione correctamente */
+}
+
+/* Definir la animación de desvanecimiento y desplazamiento */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Efecto de elevación y borde neón al pasar el ratón */
+.card:hover {
+    transform: scale(2.05); /* Aumentar toda la card */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5); /* Aumentar la sombra */
+}
+
+/* Crear el borde neón rojo con un pseudo-elemento */
+
+/* Estilo inicial de las imágenes de las cards */
+.card-img-top {
+    height: 500px; /* Altura de la imagen */
+    object-fit: cover; /* Ajusta la imagen dentro del contenedor sin deformarla */
+    transition: transform 0.3s ease; /* Añadir transición */
+}
+
+/* Asegúrate de que el zoom afecta a toda la card y no solo a la imagen */
+.card:hover .card-img-top {
+    transform: scale(1.05); /* Aumentar la imagen junto con la card */
+}
+@keyframes slideAndColor {
+    0% {
+        transform: translateX(-100%);
+        color: #ff0000;
+    }
+    50% {
+        transform: translateX(0);
+        color: #ff5555;
+    }
+    100% {
+        transform: translateX(0);
+        color: #ff0000;
+    }
+}
+
+
+
+.animation-container {
+    position: relative;
+    overflow: hidden; /* Oculta cualquier parte del círculo que se extienda más allá del contenedor */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Alinea el círculo al inicio del contenedor */
+    padding: 50px 0; /* Ajusta el relleno para un espacio automático en la parte superior e inferior */
+}
+
+.circle-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Alinea el círculo al inicio del contenedor */
+    width: 100%;
+    height: auto; /* Permite que la altura se ajuste al contenido */
+}
+
+.circle {
+    width: 60vw; /* Tamaño del círculo en relación con el ancho de la ventana */
+    height: 60vw; /* Tamaño del círculo en relación con el ancho de la ventana, para mantenerlo circular */
+    max-width: 800px; /* Tamaño máximo del círculo */
+    max-height: 800px; /* Tamaño máximo del círculo */
+    background-color: #ff0000; /* Color del círculo */
+    border-radius: 50%; /* Hace que el div sea un círculo */
+    position: relative;
+    transform: translateX(-100%); /* Empuja el círculo fuera de la vista a la izquierda */
+    animation: slideIn 1s ease-in-out forwards; /* Añade la animación */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff; /* Color del texto dentro del círculo */
+    text-align: center; /* Centra el texto dentro del círculo */
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(0); /* Empuja el círculo completamente fuera de la vista */
+    }
+    to {
+        transform: translateX(-50%); /* Mueve el círculo hacia adentro, dejando visible un semicírculo */
+    }
+}
+
+.circle-text {
+    position: absolute;
+    z-index: 1;
+    font-size: 1.2rem; /* Ajusta el tamaño del texto para que siempre sea legible */
+}
+
+.titulo-promesas {
+    font-size: 2.5rem; /* Tamaño de fuente grande */
+    font-weight: bold; /* Fuente en negrita */
+    color: #ff0000; /* Color rojo para el texto */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    letter-spacing: 2px; /* Espaciado entre letras */
+    margin-bottom: 2rem; /* Espacio debajo del título para ajustarse automáticamente */
+    animation: slideAndColor 2s ease-in-out; /* Aplicar la animación de desplazamiento y color */
+}
